@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php 
-$title = "Entreprise"; 
+$title = "Company"; 
 include("userHead.php") 
 ?>
 <style>

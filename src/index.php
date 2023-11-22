@@ -1,10 +1,14 @@
+<?php
+require("lang/lang.php")
+  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <?php
-$title = "Home";  
-include("userHead.php") 
-?>
+$title = "Home";
+include("userHead.php")
+  ?>
 
 <body class="dark:bg-gray-900 ">
   <header>
@@ -17,11 +21,37 @@ include("userHead.php")
         </a>
         <div class="flex items-center lg:order-2">
           <a href="../src/signin.php"
-            class="text-gray-900 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Log
-            in</a>
+            class="text-gray-900 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
+            <?= __('Log in') ?>
+          </a>
           <a href="../src/signup.php"
-            class="text-white bg-orange-600 hover:bg-orange-700 focus:ring-4 focus:ring-orange-300 font-medium rounded-3xl text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-orange-600 dark:hover:bg-orange-700 focus:outline-none dark:focus:ring-orange-800">Sign
-            Up</a>
+            class="text-medium text-white bg-orange-600 hover:bg-orange-700 focus:ring-4 focus:ring-orange-300 font-medium rounded-3xl text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-orange-600 dark:hover:bg-orange-700 focus:outline-none dark:focus:ring-orange-800">
+            <?= __('Sign Up') ?>
+          </a>
+          <a id="dropdownDefaultButton" data-dropdown-toggle="dropdown-1"
+            class="inline-flex py-2 pr-4 pl-3 cursor-pointer text-orange-600 dark:text-orange-500 font-medium">
+            <?= __('Languages') ?>
+            <svg class="w-2.5 h-2.5 ml-2.5 mt-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 10 6">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m1 1 4 4 4-4" />
+            </svg>
+
+          </a>
+          <!-- Dropdown menu -->
+          <div id="dropdown-1"
+            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+              <li>
+                <a href="index.php?lang=en"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">EN</a>
+              </li>
+              <li>
+                <a href="index.php?lang=fr"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">FR</a>
+              </li>
+            </ul>
+          </div>
           <button id="theme-toggle" type="button"
             class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
             <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
@@ -56,14 +86,15 @@ include("userHead.php")
             <li>
               <a href="../src/index.php"
                 class="block py-2 pr-4 pl-3 text-orange-500 rounded lg:bg-transparent lg:text-orange-700 lg:p-0 dark:text-white"
-                aria-current="page">Home
+                aria-current="page">
+                <?= __('Home') ?>
               </a>
             </li>
             <li>
               <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
                 class="inline-flex py-2 pr-4 pl-3 cursor-pointer text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-orange-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
                 type="button">
-                Company
+                <?= __('Company') ?>
                 <svg class="w-2.5 h-2.5 ml-2.5 mt-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                   viewBox="0 0 10 6">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -98,12 +129,15 @@ include("userHead.php")
             </li>
             <li>
               <a href="../src/marketplace.php"
-                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-orange-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Market
-                Place</a>
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-orange-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
+                <?= __('Marketplace') ?>
+              </a>
             </li>
             <li>
               <a href="../src/contact.php"
-                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-orange-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-orange-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
+                <?= __('Contact') ?>
+              </a>
             </li>
           </ul>
         </div>
@@ -116,12 +150,14 @@ include("userHead.php")
       <div class="mx-auto lg:mx-auto place-self-center lg:col-span-7 w-auto">
         <h1
           class="max-w-2xl mb-4 text-5xl tracking-wider leading-wide md:text-5xl xl:tracking-normal xl:text-8xl xl:leading-wide dark:text-white ">
-          Are you looking for Freelancers ? </h1>
-        <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Hire Great
-          Freelancers, Fast. PeopleForTasks helps you hire elite freelancers at a moment's, or just be onenotice. </p>
+          <?= __("Are you looking for Freelancers ?") ?>
+        </h1>
+        <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+          <?= __("Hire Great Freelancers, Fast. PeopleForTasks helps you hire elite freelancers at a moment's, or just be onenotice.") ?>
+        </p>
         <a href="../src/marketplace.php"
           class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-3xl bg-orange-600 hover:bg-orange-700 focus:ring-4">
-          Hire Freelancers
+          <?= __("Hire Freelancers") ?>
           <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd"
               d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
@@ -130,7 +166,7 @@ include("userHead.php")
         </a>
         <a href="../src/marketplace.php"
           class="inline-flex items-start justify-center mt-5 px-2 py-3 text-base text-left text-gray-900 border border-gray-300 rounded-3xl hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-          Look for freelancing jobs
+          <?= __("Look for freelancing jobs") ?>
         </a>
       </div>
       <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
@@ -140,8 +176,21 @@ include("userHead.php")
   </section>
   <section class=" recent-works">
     <div class=" flex flex-col items-center py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-      <h2 class="mb-12 text-2xl tracking-tight font-normal text-[#00373E] dark:text-white lg:text-5xl">Recently posted
-        <span class="text-orange-600">works</span>
+      <h2 class="mb-12 text-2xl tracking-tight font-normal text-[#00373E] dark:text-white lg:text-5xl">
+        <?php if ($_GET['lang'] == "en") { ?>
+          <?= __("Recently posted"); ?>
+          <span class="text-orange-600">
+            <?= __("work") ?>
+          </span>
+          <?php
+        } else if ($_GET['lang'] == "fr") { ?>
+            <span class="text-orange-600">
+            <?= __("work") ?>
+            </span>
+          <?= __("Recently posted"); ?>
+
+        <?php }
+        ?>
       </h2>
       <div class="grid gap-6 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 items-center">
         <div class="w-64 bg-white p-8 rounded-lg dark:bg-gray-800 shadow-md">
@@ -156,11 +205,12 @@ include("userHead.php")
 
             <h3 class=" text-xl font-bold dark:text-white ml-2">Logo Design</h3>
           </div>
-          <p class="text-gray-500 dark:text-gray-400">Need a professional logo with writing underneath for our jewellery
-            company</p>
+          <p class="text-gray-500 dark:text-gray-400 text-center">
+            <?= __("Need a professional logo with writing underneath for our jewellery company") ?>
+          </p>
           <button type="button"
-            class="text-orange-600 hover:text-black dark:hover:text-white focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-3xl text-xl px-3 py-2 text-center ml-1 md:ml-1 mt-5 dark:focus:ring-orange-600 ">APPLY
-            NOW
+            class="text-orange-600 hover:text-black dark:hover:text-white focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-3xl text-xl mt-5 px-6 dark:focus:ring-orange-600 ">
+            <?= __("APPLY NOW") ?>
           </button>
         </div>
         <div class="w-64 bg-white p-8 rounded-lg dark:bg-gray-800 shadow-md">
@@ -190,11 +240,12 @@ include("userHead.php")
             </svg>
             <h3 class=" text-xl font-bold dark:text-white ml-1">Graphic Design</h3>
           </div>
-          <p class="text-gray-500 dark:text-gray-400">Need a professional logo with writing underneath for our jewellery
-            company</p>
+          <p class="text-gray-500 dark:text-gray-400 text-center">
+            <?= __("Need a professional logo with writing underneath for our jewellery company") ?>
+          </p>
           <button type="button"
-            class="text-orange-600 hover:text-black dark:hover:text-white focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-3xl text-xl px-3 py-2 text-center ml-1 md:ml-1 mt-5 dark:focus:ring-orange-600 ">APPLY
-            NOW
+            class="text-orange-600 hover:text-black dark:hover:text-white focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-3xl text-xl mt-5 dark:focus:ring-orange-600 px-6">
+            <?= __("APPLY NOW") ?>
           </button>
         </div>
         <div class="w-64 bg-white p-8 rounded-lg dark:bg-gray-800 shadow-md">
@@ -216,11 +267,12 @@ include("userHead.php")
 
             <h3 class=" text-xl font-bold dark:text-white ml-2">SEO Expert </h3>
           </div>
-          <p class="text-gray-500 dark:text-gray-400">Need a professional logo with writing underneath for our jewellery
-            company</p>
+          <p class="text-gray-500 dark:text-gray-400 text-center">
+            <?= __("Need a professional logo with writing underneath for our jewellery company") ?>
+          </p>
           <button type="button"
-            class="text-orange-600 hover:text-black dark:hover:text-white focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-3xl text-xl px-3 py-2 text-center ml-1 md:ml-1 mt-5 dark:focus:ring-orange-600 ">APPLY
-            NOW
+            class="text-orange-600 hover:text-black dark:hover:text-white focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-3xl text-xl px-6 dark:focus:ring-orange-600 mt-5">
+            <?= __("APPLY NOW") ?>
           </button>
         </div>
       </div>
@@ -228,8 +280,21 @@ include("userHead.php")
   </section>
   <section class="categories">
     <div class=" flex flex-col items-center py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-      <h2 class="mb-12 text-2xl tracking-tight font-normal text-[#00373E] dark:text-white lg:text-5xl">Most Popular
-        <span class="text-orange-600">categories</span>
+      <h2 class="mb-12 text-2xl tracking-tight font-normal text-[#00373E] dark:text-white lg:text-5xl">
+        <?php if ($_GET['lang'] == "en") { ?>
+          <?= __("Most Popular"); ?>
+          <span class="text-orange-600">
+            <?= __("categories") ?>
+          </span>
+          <?php
+        } else if ($_GET['lang'] == "fr") { ?>
+            <span class="text-orange-600">
+            <?= __("Catégories") ?>
+            </span>
+          <?= __("les plus populaires"); ?>
+
+        <?php }
+        ?>
       </h2>
       <div class="grid gap-6 lg:gap-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 items-center">
         <div class="shadow-md">
@@ -270,14 +335,15 @@ include("userHead.php")
         </div>
       </div>
       <button id="More" type="button"
-        class="bg-orange-600 text-white hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-3xl text-xl px-5 py-3 text-center ml-1 md:ml-1 mt-10 dark:focus:ring-orange-600">More
-        categories
+        class="text-white bg-orange-600 hover:bg-orange-700 focus:ring-4 focus:ring-orange-300 font-medium rounded-3xl text-xl px-5 py-3 text-center ml-1 md:ml-1 mt-10 dark:bg-orange-600 dark:hover:bg-orange-700 focus:outline-none dark:focus:ring-orange-800">
+        <?= __("More categories") ?>
       </button>
     </div>
   </section>
   <section class=" freelancers">
     <div class=" flex flex-col items-center py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
-      <h2 class=" mb-12 text-xl tracking-tight font-normal text-[#00373E] dark:text-white lg:text-5xl">Check out the
+      <h2 class="mb-12 text-2xl tracking-tight font-normal text-[#00373E] dark:text-white lg:text-5xl">
+        Check out the
         most popular <span class="text-orange-600">freelancers</span></h2>
       <div class="grid gap-6 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 items-center">
         <div
@@ -314,11 +380,10 @@ include("userHead.php")
       <div class="text-left w-96 ">
         <h2
           class=" text-3xl font-bold tracking-widest leading-loose text-[#00373E] dark:text-white sm:text-3xl sm:leading-loose">
-          What our customers are saying ?
+          <?= __("What our customers are saying ?") ?>
         </h2>
         <p class="mt-7 sm:leading-10 text-gray-600 ">
-          Doesn't matter if you're a freelancer or just a client looking for a task to be done ... “PeoplePerTasks”
-          makes everything happen.
+          <?= __("Doesn't matter if you're a freelancer or just a client looking for a task to be done ... “PeoplePerTasks” makes everything happen.") ?>
         </p>
         <div class="hidden lg:mt-8 lg:flex lg:gap-4">
           <button aria-label="previous slide" id="previous"
@@ -351,9 +416,7 @@ include("userHead.php")
                   </div>
                 </div>
                 <p class="mt-4 leading-relaxed text-gray-700 dark:text-gray-400">
-                  Loving this freelancing platform! As a front-end developer, the seamless interface and diverse
-                  opportunities make it my go-to. Quick payments and user-friendly experience keep me coming back. Kudos
-                  to the team for an awesome space for freelancers!
+                  <?= __("Loving this freelancing platform! As a front-end developer, the seamless interface and diverse opportunities make it my go-to. Quick payments and user-friendly experience keep me coming back. Kudos to the team for an awesome space for freelancers!") ?>
                 </p>
               </div>
             </div>
@@ -370,9 +433,7 @@ include("userHead.php")
                   </div>
                 </div>
                 <p class="mt-4 leading-relaxed text-gray-700 dark:text-gray-400">
-                  The diversity of data projects is outstanding, allowing me to apply my skills across various domains.
-                  Transparent communication and a reliable payment system make working here a pleasure. I'm truly glad
-                  to be one of your loyal customers
+                  <?= __("The diversity of data projects is outstanding, allowing me to apply my skills across various domains. Transparent communication and a reliable payment system make working here a pleasure. I'm truly glad to be one of your loyal customers") ?>
                 </p>
               </div>
             </div>
@@ -389,9 +450,7 @@ include("userHead.php")
                   </div>
                 </div>
                 <p class="mt-4 leading-relaxed text-gray-700 dark:text-gray-400">
-                  As a graphic designer, finding the right platform is crucial. P-P-T nails the essentials with a sleek,
-                  user-friendly interface that makes showcasing my portfolio and connecting with clients a breeze. It
-                  truly gets the needs of freelancers in the creative field.
+                  <?= __("As a graphic designer, finding the right platform is crucial. P-P-T nails the essentials with a sleek, user-friendly interface that makes showcasing my portfolio and connecting with clients a breeze. It truly gets the needs of freelancers in the creative field.") ?>
                 </p>
               </div>
             </div>
@@ -408,9 +467,7 @@ include("userHead.php")
                   </div>
                 </div>
                 <p class="mt-4 leading-relaxed text-gray-700 dark:text-gray-400">
-                  Freelancing bliss! As a video editor, this platform is a game-changer. The intuitive interface makes
-                  showcasing my portfolio and connecting with clients seamless. Hats off to the team for understanding
-                  and supporting freelancers' unique needs
+                  <?= __("Freelancing bliss! As a video editor, this platform is a game-changer. The intuitive interface makes showcasing my portfolio and connecting with clients seamless. Hats off to the team for understanding and supporting freelancers' unique needs") ?>
                 </p>
               </div>
             </div>
