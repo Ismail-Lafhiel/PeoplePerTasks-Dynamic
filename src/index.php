@@ -107,23 +107,26 @@ include("userHead.php")
                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                   <li>
                     <a href="../src/about.php#tab-profile"
-                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Who we
-                      are</a>
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      <?= __('Who we are') ?>
+                    </a>
                   </li>
                   <li>
                     <a href="../src/about.php#tab-settings"
-                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Our Value
-                      System</a>
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      <?= __('Our Value System') ?>
+                    </a>
                   </li>
                   <li>
                     <a href="../src/about.php#tab-options"
-                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Meet The
-                      Team</a>
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      <?= __('Meet The Team') ?>
+                    </a>
                   </li>
                 </ul>
                 <div class="py-2">
                   <a href="../src/pricing.php"
-                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Pricing</a>
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"><?= __('Pricing') ?></a>
                 </div>
               </div>
             </li>
@@ -177,17 +180,18 @@ include("userHead.php")
   <section class=" recent-works">
     <div class=" flex flex-col items-center py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
       <h2 class="mb-12 text-2xl tracking-tight font-normal text-[#00373E] dark:text-white lg:text-5xl">
-        <?php if ($_GET['lang'] == "en") { ?>
+        <?php if (isset($_GET['lang']) == "fr") { ?>
+          <span class="text-orange-600">
+            <?= __("works") ?>
+          </span>
+          <?= __("Recently posted"); ?>
+
+          <?php
+        } else { ?>
           <?= __("Recently posted"); ?>
           <span class="text-orange-600">
-            <?= __("work") ?>
+            <?= __("works") ?>
           </span>
-          <?php
-        } else if ($_GET['lang'] == "fr") { ?>
-            <span class="text-orange-600">
-            <?= __("work") ?>
-            </span>
-          <?= __("Recently posted"); ?>
 
         <?php }
         ?>
@@ -203,7 +207,9 @@ include("userHead.php")
                 fill="currentcolor" />
             </svg>
 
-            <h3 class=" text-xl font-bold dark:text-white ml-2">Logo Design</h3>
+            <h3 class=" text-xl font-bold dark:text-white ml-2">
+              <?= __("Logo Design") ?>
+            </h3>
           </div>
           <p class="text-gray-500 dark:text-gray-400 text-center">
             <?= __("Need a professional logo with writing underneath for our jewellery company") ?>
@@ -238,7 +244,9 @@ include("userHead.php")
                 </filter>
               </defs>
             </svg>
-            <h3 class=" text-xl font-bold dark:text-white ml-1">Graphic Design</h3>
+            <h3 class=" text-xl font-bold dark:text-white ml-1">
+              <?= __("Graphic Design") ?>
+            </h3>
           </div>
           <p class="text-gray-500 dark:text-gray-400 text-center">
             <?= __("Need a professional logo with writing underneath for our jewellery company") ?>
@@ -250,7 +258,7 @@ include("userHead.php")
         </div>
         <div class="w-64 bg-white p-8 rounded-lg dark:bg-gray-800 shadow-md">
           <div
-            class="flex justify-between items-center content-center mb-4 w-fit h-fit rounded-full lg:h-fit lg:w-fit  ">
+            class="flex justify-center items-center content-center mb-4 w-fit h-fit rounded-full lg:h-fit lg:w-fit text-center">
             <svg width="40" height="40" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg"
               class="text-[#00373E] dark:text-white">
               <g clip-path="url(#clip0_1_155)">
@@ -265,7 +273,9 @@ include("userHead.php")
               </defs>
             </svg>
 
-            <h3 class=" text-xl font-bold dark:text-white ml-2">SEO Expert </h3>
+            <h3 class=" text-lg font-bold dark:text-white ml-2">
+              <?= __("SEO Expert") ?>
+            </h3>
           </div>
           <p class="text-gray-500 dark:text-gray-400 text-center">
             <?= __("Need a professional logo with writing underneath for our jewellery company") ?>
@@ -281,17 +291,18 @@ include("userHead.php")
   <section class="categories">
     <div class=" flex flex-col items-center py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
       <h2 class="mb-12 text-2xl tracking-tight font-normal text-[#00373E] dark:text-white lg:text-5xl">
-        <?php if ($_GET['lang'] == "en") { ?>
+        <?php if (isset($_GET['lang']) == "fr") { ?>
+          <span class="text-orange-600">
+            <?= __("categories") ?>
+          </span>
+          <?= __("Most Popular"); ?>
+
+          <?php
+        } else { ?>
           <?= __("Most Popular"); ?>
           <span class="text-orange-600">
             <?= __("categories") ?>
           </span>
-          <?php
-        } else if ($_GET['lang'] == "fr") { ?>
-            <span class="text-orange-600">
-            <?= __("Catégories") ?>
-            </span>
-          <?= __("les plus populaires"); ?>
 
         <?php }
         ?>
@@ -302,7 +313,7 @@ include("userHead.php")
             <img class="w-full h-full" src="../images/category1.png" alt="Graphic Design">
             <div class="absolute inset-0 bg-black bg-opacity-50"></div>
             <div class="absolute inset-0 flex items-center justify-center">
-              <span class="text-white text-xl font-bold tracking-wider">Graphic Design</span>
+              <span class="text-white text-xl font-bold tracking-wider"><?= __("SEO Expert") ?></span>
             </div>
           </a>
         </div>
@@ -311,7 +322,7 @@ include("userHead.php")
             <img class="w-full h-full" src="../images/category2.png" alt="Cartoon Animation">
             <div class="absolute inset-0 bg-black bg-opacity-50"></div>
             <div class="absolute inset-0 flex items-center justify-center">
-              <span class="text-white text-xl font-bold tracking-wider">Cartoon Animation</span>
+              <span class="text-white text-xl font-bold tracking-wider"><?= __("Cartoon Animation") ?></span>
             </div>
           </a>
         </div>
@@ -320,7 +331,7 @@ include("userHead.php")
             <img class="w-full h-full" src="../images/category3.png" alt="Illustration">
             <div class="absolute inset-0 bg-black bg-opacity-50"></div>
             <div class="absolute inset-0 flex items-center justify-center">
-              <span class="text-white text-xl font-bold tracking-wider">Illustration</span>
+              <span class="text-white text-xl font-bold tracking-wider"><?= __("Illustration") ?></span>
             </div>
           </a>
         </div>
@@ -329,7 +340,7 @@ include("userHead.php")
             <img class="w-full h-full " src="../images/category4.png" alt="Video Editing">
             <div class="absolute inset-0 bg-black bg-opacity-50"></div>
             <div class="absolute inset-0 flex items-center justify-center">
-              <span class="text-white text-xl tracking-wider font-bold">Video Editing</span>
+              <span class="text-white text-xl tracking-wider font-bold"><?= __("Video Editing") ?></span>
             </div>
           </a>
         </div>
@@ -341,10 +352,24 @@ include("userHead.php")
     </div>
   </section>
   <section class=" freelancers">
-    <div class=" flex flex-col items-center py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
-      <h2 class="mb-12 text-2xl tracking-tight font-normal text-[#00373E] dark:text-white lg:text-5xl">
-        Check out the
-        most popular <span class="text-orange-600">freelancers</span></h2>
+    <div class="flex flex-col items-center py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+      <h2 class="mb-12 text-2xl tracking-tight font-normal text-[#00373E] dark:text-white lg:text-5xl text-center">
+        <?php if (isset($_GET['lang']) == "fr") { ?>
+          <span class="text-orange-600">
+            <?= __("freelancers") ?>
+          </span>
+          <?= __("Most Popular"); ?>
+
+          <?php
+        } else { ?>
+          <?= __("Most Popular"); ?>
+          <span class="text-orange-600">
+            <?= __("freelancers") ?>
+          </span>
+
+        <?php }
+        ?>
+      </h2>
       <div class="grid gap-6 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 items-center">
         <div
           class="text-center text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 py-12 px-12 w-64 rounded-xl shadow-md">
@@ -352,15 +377,16 @@ include("userHead.php")
           <h3 class="mb-1 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
             <a href="../src/freelancers.php">Khalid Oukha</a>
           </h3>
-          <p>Graphic Designer</p>
+          <p><?= __("Graphic Designer") ?></p>
         </div>
         <div
           class="text-center text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 py-12 px-12 w-64 rounded-xl shadow-md">
           <img class="mx-auto mb-4 w-36 h-36 rounded-full" src="../images/freelancer3.jpg" alt="Yassine Louissi">
           <h3 class="mb-1 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-            <a href="../src/freelancers.php">Yassine Louissi</a>
+            <a href="../src/freelancers.php">Abdeljabar
+            </a>
           </h3>
-          <p>UI UX Designer</p>
+          <p><?= __("UI/UX Designer") ?></p>
         </div>
         <div
           class="text-center text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 py-12 px-12 w-64 rounded-xl shadow-md">
@@ -369,7 +395,7 @@ include("userHead.php")
             <a href="../src/freelancers.php">Abdeljabar
             </a>
           </h3>
-          <p>SEO & Marketing</p>
+          <p><?= __("SEO & Marketing") ?></p>
         </div>
       </div>
     </div>

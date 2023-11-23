@@ -14,6 +14,11 @@ include("userHead.php")
       margin: 50px;
     }
   }
+  @media (min-width: 900px) {
+    .main-header {
+      margin: 100px;
+    }
+  }
 </style>
 
 <body class="dark:bg-gray-900">
