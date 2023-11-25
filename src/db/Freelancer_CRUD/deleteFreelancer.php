@@ -2,12 +2,12 @@
 require_once("../conn.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user_id = $_POST["user_id"];
+    $freelancer_id = $_POST["freelancer_id"];
     
-    $query = "DELETE FROM `users` WHERE id = $user_id";
+    $query = "DELETE FROM `freelancers` WHERE id = $freelancer_id";
     
     if ($stmt = mysqli_prepare($conn, $query)) {
-        // mysqli_stmt_bind_param($stmt, "i", $user_id);
+        // mysqli_stmt_bind_param($stmt, "i", $freelancer_id);
         
         if (mysqli_stmt_execute($stmt)) {
             echo "User deleted successfully";
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . $query . "<br>" . mysqli_error($conn);
     }
     
-    header("Location: ../../admin/users.php");
+    header("Location: ../../admin/freelancers.php");
     mysqli_close($conn);
 }
 ?>

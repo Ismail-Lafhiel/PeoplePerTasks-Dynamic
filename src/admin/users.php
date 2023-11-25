@@ -232,7 +232,7 @@ include("adminHead.php");
                             </h3>
                             <form action="../db/User_CRUD/deleteUser.php" class="p-4 md:p-5" method="POST">
                                 <div class="col-span-2">
-                                    <label for="first-name"
+                                    <label for="user-id"
                                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">User
                                         ID</label>
                                     <input type="number" name="user_id" id="user-id"
@@ -279,7 +279,7 @@ include("adminHead.php");
                             Created At
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Created At
+                            Updated At
                         </th>
                     </tr>
                 </thead>

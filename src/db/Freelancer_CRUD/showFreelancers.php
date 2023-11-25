@@ -2,12 +2,12 @@
 
 require_once("../db/conn.php");
 
-$query = "SELECT * FROM `users`";
+$query = "SELECT * FROM `freelancers`";
 $result = mysqli_query($conn, $query);
 
-$users = array();
+$freelancers = array();
 while ($row = mysqli_fetch_assoc($result)) {
-    $users[$row['id']] = $row;
+    $freelancers[$row['id']] = $row;
 }
 
 mysqli_close($conn);

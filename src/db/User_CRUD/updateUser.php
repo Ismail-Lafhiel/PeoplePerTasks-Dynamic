@@ -8,10 +8,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $bio = $_POST["bio"];
 
-    $query = "UPDATE `users` SET first_name=?, last_name=?, email=?, bio=? WHERE id=?";
+    $query = "UPDATE `users` SET first_name='$first_name', last_name='$last_name', email='$email', bio='$bio' WHERE id=$user_id";
     
     if ($stmt = mysqli_prepare($conn, $query)) {
-        mysqli_stmt_bind_param($stmt, "ssssi", $first_name, $last_name, $email, $bio, $user_id);
+        // mysqli_stmt_bind_param($stmt, "ssssi", $first_name, $last_name, $email, $bio, $user_id);
         
         if (mysqli_stmt_execute($stmt)) {
             echo "User updated successfully";

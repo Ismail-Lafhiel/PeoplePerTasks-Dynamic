@@ -10,10 +10,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-    $query = "INSERT INTO `users` (first_name, last_name, email, password, bio) VALUES (?, ?, ?, ?, ?)";
+    $query = "INSERT INTO `users` (first_name, last_name, email, password, bio) VALUES ('$first_name', '$last_name', '$email', '$hashed_password', '$bio')";
     
     if ($stmt = mysqli_prepare($conn, $query)) {
-        mysqli_stmt_bind_param($stmt, "sssss", $first_name, $last_name, $email, $hashed_password, $bio);
+        // mysqli_stmt_bind_param($stmt, "sssss", $first_name, $last_name, $email, $hashed_password, $bio);
         
         if (mysqli_stmt_execute($stmt)) {
             echo "New user created successfully";
