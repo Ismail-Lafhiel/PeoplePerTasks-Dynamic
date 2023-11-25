@@ -1,13 +1,11 @@
-<?php
-require("lang/lang.php")
-  ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <?php
 $title = "Home";
-include("userHead.php")
+include("userHead.php");
+require("lang/lang.php")
+
   ?>
 
 <body class="dark:bg-gray-900 ">
