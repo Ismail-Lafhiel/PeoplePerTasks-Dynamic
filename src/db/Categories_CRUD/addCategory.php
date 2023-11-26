@@ -2,8 +2,8 @@
 require_once("../conn.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST["name"];
-    $query = "INSERT INTO `categories` (name) VALUES ('$name')";
+    $category_name = $_POST["name"];
+    $query = "INSERT INTO `categories` (name) VALUES ('$category_name')";
     
     if ($stmt = mysqli_prepare($conn, $query)) {
         // mysqli_stmt_bind_param($stmt, "s", $first);

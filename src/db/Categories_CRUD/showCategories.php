@@ -10,5 +10,5 @@ while ($row = mysqli_fetch_assoc($result)) {
     $categories[$row['id']] = $row;
 }
 
-mysqli_close($conn);
+// mysqli_close($conn);
 ?>
