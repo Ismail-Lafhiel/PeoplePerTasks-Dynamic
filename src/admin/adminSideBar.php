@@ -168,8 +168,8 @@ $no_hover = "class='flex items-center p-2 text-gray-900 rounded-lg dark:text-whi
             </li>
 
             <li>
-                <a href="./categories.php" <?php if (isset($hover))
-                    echo $hover;
+                <a href="./categories.php" <?php if (isset($categories_hover))
+                    echo $categories_hover;
                 else {
                     echo $no_hover;
                 }
