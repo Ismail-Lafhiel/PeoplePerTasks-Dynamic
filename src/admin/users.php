@@ -77,7 +77,8 @@ include("adminHead.php");
                             </button>
                         </div>
                         <!-- Modal body -->
-                        <form action="../db/User_CRUD/addUser.php" class="p-4 md:p-5" method="POST">
+                        <form action="../db/User_CRUD/addUser.php" class="p-4 md:p-5" method="POST"
+                            enctype="multipart/form-data">
                             <div class="grid gap-4 mb-4 grid-cols-2">
                                 <div class="col-span-2">
                                     <label for="first-name"
@@ -116,6 +117,14 @@ include("adminHead.php");
                                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         placeholder="Write bio here"></textarea>
                                 </div>
+                                <div class="col-span-2">
+                                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                        for="user_avatar">Upload file</label>
+                                    <input
+                                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                        aria-describedby="user_avatar_help" id="user_avatar" name="user_avatar"
+                                        type="file">
+                                </div>
                             </div>
                             <button type="submit"
                                 class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
@@ -149,7 +158,8 @@ include("adminHead.php");
                             </button>
                         </div>
                         <!-- Modal body -->
-                        <form action="../db/User_CRUD/updateUser.php" class="p-4 md:p-5" method="POST">
+                        <form action="../db/User_CRUD/updateUser.php" class="p-4 md:p-5" method="POST"
+                            enctype="multipart/form-data">
                             <div class="grid gap-4 mb-4 grid-cols-2">
                                 <div class="col-span-2">
                                     <label for="first-name"
@@ -195,6 +205,14 @@ include("adminHead.php");
                                     <textarea id="bio" name="bio" rows="4"
                                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         placeholder="Write bio here"></textarea>
+                                </div>
+                                <div class="col-span-2">
+                                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                        for="user_avatar">Upload file</label>
+                                    <input
+                                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                        aria-describedby="user_avatar_help" id="user_avatar" name="user_avatar"
+                                        type="file">
                                 </div>
                             </div>
                             <button type="submit"
@@ -297,7 +315,10 @@ include("adminHead.php");
                                 </div>
                             </th>
                             <td class="px-6 py-4">
-                                <?php echo $user['first_name'] . " " . $user["last_name"] ?>
+                                <img class="w-10 h-10 rounded-full" src="<?php echo '../../../images/uploads/'.$user['img_path'] ?>"
+                                    alt="">
+                                <div class="inline ps-3">
+                                    <?php echo $user['first_name'] . " " . $user["last_name"] ?>
                             </td>
                             <td class="px-6 py-4">
                                 <?php echo $user["email"] ?>
