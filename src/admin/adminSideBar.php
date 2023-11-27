@@ -186,6 +186,25 @@ $no_hover = "class='flex items-center p-2 text-gray-900 rounded-lg dark:text-whi
                     <span class="flex-1 ml-3 whitespace-nowrap font-inter">Categories</span>
                 </a>
             </li>
+            <li>
+                <a href="./testemonials.php" <?php if (isset($testemonials_hover))
+                    echo $testemonials_hover;
+                else {
+                    echo $no_hover;
+                }
+                ?>>
+                    <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                        width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M14.4003 4.19996L1.60068 4.19978L1.59985 4.2M14.4003 4.19996L14.3999 13.0773C14.3999 13.9183 13.7052 14.6 12.8483 14.6H3.15137C2.29449 14.6 1.59985 13.9183 1.59985 13.0773V4.2M14.4003 4.19996L11.8342 1.63431C11.6841 1.48429 11.4807 1.4 11.2685 1.4H4.73122C4.51905 1.4 4.31557 1.48428 4.16554 1.63431L1.59985 4.2M10.3999 6.6C10.3999 7.92548 9.32534 9 7.99985 9C6.67437 9 5.59985 7.92548 5.59985 6.6"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+
+
+                    <span class="flex-1 ml-3 whitespace-nowrap font-inter">Testemonials</span>
+                </a>
+            </li>
 
 
             <li>

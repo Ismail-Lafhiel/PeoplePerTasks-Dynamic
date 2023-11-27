@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
     $bio = $_POST["bio"];
 
-    $imgNewName = null; // Initialize $imgNewName
+    $imgNewName = null;
 
     if (isset($_FILES["user_avatar"]) && $_FILES["user_avatar"]["error"] === 0) {
         $imgName = $_FILES["user_avatar"]["name"];
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $allowed = array("jpg", "jpeg", "png");
 
         if (in_array($imgActualExt, $allowed)) {
-            if ($imgSize < 125000) {
+            if ($imgSize < 225000) {
                 $imgNewName = uniqid("", true) . "." . $imgActualExt;
                 $imgDestination = '../../../images/uploads/' . $imgNewName;
                 if (move_uploaded_file($imgTmpName, $imgDestination)) {

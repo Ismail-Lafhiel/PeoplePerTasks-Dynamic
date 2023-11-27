@@ -1,19 +1,19 @@
 <?php
-require_once("../db/Freelancer_CRUD/showFreelancers.php");
+require_once("../db/Testemonials_CRUD/showTestemonials.php");
 require_once("../db/User_CRUD/showUsers.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <?php
-$title = "Freelancers";
+$title = "Testemonials";
 include("adminHead.php")
     ?>
 
 <body class="dark:bg-gray-900">
 
     <?php
-    $freelancers_hover = "class='flex items-center p-2 text-white rounded-lg bg-orange-600 dark:text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 group'";
+    $testemonials_hover = "class='flex items-center p-2 text-white rounded-lg bg-orange-600 dark:text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 group'";
     include("adminSideBar.php");
     ?>
 
@@ -31,17 +31,7 @@ include("adminHead.php")
                     <path
                         d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
                 </svg>
-                Add Freelancer
-            </button>
-            <button data-modal-target="edit-modal" data-modal-toggle="edit-modal"
-                class="mb-7 mr-5 text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-                type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" height="1em" class="inline mr-1" style="fill: #FFF"
-                    viewBox="0 0 512 512">
-                    <path
-                        d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z" />
-                </svg>
-                Edit Freelancer
+                Add Testemonial
             </button>
             <button data-modal-target="delete-modal" data-modal-toggle="delete-modal"
                 class="mb-7 text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
@@ -53,7 +43,6 @@ include("adminHead.php")
                 </svg>
                 Delete Freelancer
             </button>
-
             <!-- add modal -->
             <div id="add-modal" tabindex="-1" aria-hidden="true"
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -64,7 +53,7 @@ include("adminHead.php")
                         <div
                             class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                             <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                Add New Freelancer
+                                Add New Category
                             </h3>
                             <button type="button"
                                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
@@ -78,96 +67,30 @@ include("adminHead.php")
                             </button>
                         </div>
                         <!-- Modal body -->
-                        <form action="../db/Freelancer_CRUD/addFreelancer.php" class="p-4 md:p-5" method="POST">
+                        <form action="../db/Testemonials_CRUD/addTestemonial.php" class="p-4 md:p-5" method="POST">
                             <div class="grid gap-4 mb-4 grid-cols-2">
                                 <div class="col-span-2">
-                                    <label for="first-name"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full
-                                        Name</label>
-                                    <Select name="user_id" id="users"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
-                                        <option value="#"> --select an option-- </option>
-                                        <?php
-                                        foreach ($users as $id => $user) {
-                                            echo "<option value='" . $id . "'>" . $user['first_name'] . " " . $user['last_name'] . "</option>";
-                                        }
-                                        ?>
-                                    </Select>
+                                    <label for="comment"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Comment</label>
+                                    <input type="text" name="comment" id="comment"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="writea a comment" required="">
                                 </div>
                                 <div class="col-span-2">
-                                    <label for="last-name"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Position</label>
-                                    <input type="text" name="competences" id="competences"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                        placeholder="job" required="">
+                                    <label for="user_id"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Writter</label>
+                                    <select name="user_id" id="user_id"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
+                                        <option value="#"> --select an option-- </option>
+                                        <?php foreach ($users as $id => $user) {
+                                            echo "<option value='" . $id . "'>" . $user['first_name'] . " " . $user['last_name'] . "</option>";
+                                        } ?>
+                                    </select>
                                 </div>
                             </div>
                             <button type="submit"
                                 class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                Add Freelancer
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- edit modal  -->
-            <div id="edit-modal" tabindex="-1" aria-hidden="true"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full max-w-md max-h-full">
-                    <!-- Modal content -->
-                    <div class="relative bg-gray-100 rounded-lg shadow dark:bg-gray-700">
-                        <!-- Modal header -->
-                        <div
-                            class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                Edit Freelancer
-                            </h3>
-                            <button type="button"
-                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                                data-modal-toggle="edit-modal">
-                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 14 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                </svg>
-                                <span class="sr-only">Close modal</span>
-                            </button>
-                        </div>
-                        <!-- Modal body -->
-                        <form action="../db/Freelancer_CRUD/updateFreelancer.php" class="p-4 md:p-5" method="POST">
-                            <div class="grid gap-4 mb-4 grid-cols-2">
-                                <div class="col-span-2">
-                                    <label for="freelancer_id"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ID</label>
-                                    <input type="text" name="freelancer_id" id="freelancer_id"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                        placeholder="id" required="">
-                                </div>
-                                <div class="col-span-2">
-                                    <label for="first-name"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full
-                                        Name</label>
-                                    <Select name="user_id" id="users"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
-                                        <option value="#"> --select an option-- </option>
-                                        <?php
-                                        foreach ($users as $id => $user) {
-                                            echo "<option value='" . $id . "'>" . $user['first_name'] . " " . $user['last_name'] . "</option>";
-                                        }
-                                        ?>
-                                    </Select>
-                                </div>
-                                <div class="col-span-2">
-                                    <label for="last-name"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Job</label>
-                                    <input type="text" name="competences" id="competences"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                        placeholder="job" required="">
-                                </div>
-                            </div>
-                            <button type="submit"
-                                class="text-white inline-flex items-center bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-                                Edit Freelancer
+                                Add Testemonial
                             </button>
                         </form>
                     </div>
@@ -190,14 +113,14 @@ include("adminHead.php")
                         </button>
                         <div class="p-4 md:p-5 text-center">
                             <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
-                                Are you sure you want to delete this freelancer?
+                                Are you sure you want to delete this testemonial?
                             </h3>
-                            <form action="../db/Freelancer_CRUD/deleteFreelancer.php" class="p-4 md:p-5" method="POST">
+                            <form action="../db/Testemonials_CRUD/deleteTestemonial.php" class="p-4 md:p-5" method="POST">
                                 <div class="col-span-2">
-                                    <label for="freelancer-id"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Freelancer
+                                    <label for="testemonial_id"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Testemonial
                                         ID</label>
-                                    <input type="number" name="freelancer_id" id="freelancer-id"
+                                    <input type="number" name="testemonial_id" id="testemonial_id"
                                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         placeholder="freelancer id" required="">
                                 </div>
@@ -217,10 +140,6 @@ include("adminHead.php")
                     </div>
                 </div>
             </div>
-
-
-
-
             <table class="w-full shadow-md text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
@@ -235,10 +154,10 @@ include("adminHead.php")
                             id
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Name
+                            comment
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Job
+                            Written By
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Created at
@@ -249,7 +168,7 @@ include("adminHead.php")
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($freelancers as $freelancer): ?>
+                    <?php foreach ($testemonials as $testemonial): ?>
                         <tr
                             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                             <td class="w-4 p-4">
@@ -263,26 +182,24 @@ include("adminHead.php")
                                 class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
                                 <div class="pl-3">
                                     <div class="text-base font-semibold">
-                                        <?php echo $freelancer['id'] ?>
+                                        <?php echo $testemonial["id"] ?>
                                     </div>
                                 </div>
                             </th>
                             <td class="px-6 py-4">
-                                <?php echo $freelancer['first_name'] . " " . $freelancer['last_name'] ?>
+                                <?php echo $testemonial["comment"] ?>
                             </td>
                             <td class="px-6 py-4">
-                                <div class="flex items-center">
-                                    <?php echo $freelancer['competences'] ?>
-                                </div>
+                                <?php echo $testemonial["first_name"] . " " . $testemonial["last_name"] ?>
                             </td>
                             <td class="px-6 py-4">
-                                <?php echo $freelancer["created_at"] ?>
+                                <?php echo $testemonial["created_at"] ?>
                             </td>
                             <td class="px-6 py-4">
-                                <?php echo $freelancer["updated_at"] ?>
+                                <?php echo $testemonial["updated_at"] ?>
                             </td>
                         </tr>
-                    <?php endforeach ?>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
