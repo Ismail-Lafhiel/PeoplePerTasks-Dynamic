@@ -224,10 +224,10 @@ include("adminHead.php");
                                 </div>
                             </form>
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
             <table class="w-full shadow-md text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -253,6 +253,9 @@ include("adminHead.php");
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Updated At
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Action
                         </th>
                     </tr>
                 </thead>
@@ -286,6 +289,18 @@ include("adminHead.php");
                             </td>
                             <td class="px-6 py-4">
                                 <?php echo $user["updated_at"] ?>
+                            </td>
+                            <td class="px-6 py-4">
+                                <button data-modal-target="edit-modal" data-modal-toggle="edit-modal"
+                                    class="mb-7 mr-5 text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                                    type="button">
+                                    edit
+                                </button>
+                                <button data-modal-target="delele-modal" data-modal-toggle="delele-modal"
+                                    class="mb-7 mr-5 text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+                                    type="button">
+                                    detete
+                                </button>
                             </td>
                         </tr>
                     <?php endforeach; ?>
