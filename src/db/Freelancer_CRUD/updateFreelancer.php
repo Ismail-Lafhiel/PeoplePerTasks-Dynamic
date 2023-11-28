@@ -3,13 +3,14 @@ require_once("../conn.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $freelancer_id = $_POST["freelancer_id"];
-    $user_id = $_POST["user_id"];
+    $first_name = $_POST["first_name"];
+    $last_name = $_POST["last_name"];
     $job = $_POST["competences"];
 
-    $query = "UPDATE `freelancers` set user_id = '$user_id', competences= '$job' where id = $freelancer_id";
+    $query = "UPDATE `freelancers` set first_name = '$first_name', last_name = '$last_name', competences= '$job' where id = $freelancer_id";
     
     if ($stmt = mysqli_prepare($conn, $query)) {
-        // mysqli_stmt_bind_param($stmt, "si", $job, $user_id);
+        // mysqli_stmt_bind_param($stmt, "sss", $first_name, $last_name, $job);
         
         if (mysqli_stmt_execute($stmt)) {
             echo "New user created successfully";

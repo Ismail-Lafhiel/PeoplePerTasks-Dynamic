@@ -1,6 +1,5 @@
 <?php
 require_once("../db/Freelancer_CRUD/showFreelancers.php");
-require_once("../db/User_CRUD/showUsers.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,17 +81,19 @@ include("adminHead.php")
                             <div class="grid gap-4 mb-4 grid-cols-2">
                                 <div class="col-span-2">
                                     <label for="first-name"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First
                                         Name</label>
-                                    <Select name="user_id" id="users"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
-                                        <option value="#"> --select an option-- </option>
-                                        <?php
-                                        foreach ($users as $id => $user) {
-                                            echo "<option value='" . $id . "'>" . $user['first_name'] . " " . $user['last_name'] . "</option>";
-                                        }
-                                        ?>
-                                    </Select>
+                                    <input type="text" name="first_name" id="first-name"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="first name" required="">
+                                </div>
+                                <div class="col-span-2">
+                                    <label for="last-name"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last
+                                        Name</label>
+                                    <input type="text" name="last_name" id="last-name"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="last name" required="">
                                 </div>
                                 <div class="col-span-2">
                                     <label for="last-name"
@@ -136,7 +137,7 @@ include("adminHead.php")
                         <!-- Modal body -->
                         <form action="../db/Freelancer_CRUD/updateFreelancer.php" class="p-4 md:p-5" method="POST">
                             <div class="grid gap-4 mb-4 grid-cols-2">
-                                <div class="col-span-2">
+                            <div class="col-span-2">
                                     <label for="freelancer_id"
                                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ID</label>
                                     <input type="text" name="freelancer_id" id="freelancer_id"
@@ -145,17 +146,19 @@ include("adminHead.php")
                                 </div>
                                 <div class="col-span-2">
                                     <label for="first-name"
-                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First
                                         Name</label>
-                                    <Select name="user_id" id="users"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
-                                        <option value="#"> --select an option-- </option>
-                                        <?php
-                                        foreach ($users as $id => $user) {
-                                            echo "<option value='" . $id . "'>" . $user['first_name'] . " " . $user['last_name'] . "</option>";
-                                        }
-                                        ?>
-                                    </Select>
+                                    <input type="text" name="first_name" id="first-name"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="first name" required="">
+                                </div>
+                                <div class="col-span-2">
+                                    <label for="last-name"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last
+                                        Name</label>
+                                    <input type="text" name="last_name" id="last-name"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="last name" required="">
                                 </div>
                                 <div class="col-span-2">
                                     <label for="last-name"
@@ -262,13 +265,11 @@ include("adminHead.php")
                             <th scope="row"
                                 class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
                                 <div class="pl-3">
-                                    <div class="text-base font-semibold">
-                                        <?php echo $freelancer['id'] ?>
-                                    </div>
+                                    <div class="text-base font-semibold"><?php echo $freelancer['id'] ?></div>
                                 </div>
                             </th>
                             <td class="px-6 py-4">
-                                <?php echo $freelancer['first_name'] . " " . $freelancer['last_name'] ?>
+                                <?php echo $freelancer['first_name']." ".$freelancer['last_name'] ?>
                             </td>
                             <td class="px-6 py-4">
                                 <div class="flex items-center">
@@ -276,10 +277,10 @@ include("adminHead.php")
                                 </div>
                             </td>
                             <td class="px-6 py-4">
-                                <?php echo $freelancer["created_at"] ?>
+                            <?php echo $freelancer["created_at"] ?>
                             </td>
                             <td class="px-6 py-4">
-                                <?php echo $freelancer["updated_at"] ?>
+                            <?php echo $freelancer["updated_at"] ?>
                             </td>
                         </tr>
                     <?php endforeach ?>

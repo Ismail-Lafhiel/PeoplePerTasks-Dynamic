@@ -2,13 +2,14 @@
 require_once("../conn.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $first_name = $_POST["first_name"];
+    $last_name = $_POST["last_name"];
     $job = $_POST["competences"];
-    $user_id = $_POST["user_id"];
 
-    $query = "INSERT INTO `freelancers` (competences, user_id) VALUES ('$job', $user_id)";
+    $query = "INSERT INTO `freelancers` (first_name, last_name, competences) VALUES ('$first_name', '$last_name', '$job')";
     
     if ($stmt = mysqli_prepare($conn, $query)) {
-        // mysqli_stmt_bind_param($stmt, "si", $job, $user_id);
+        // mysqli_stmt_bind_param($stmt, "sss", $first_name, $last_name, $job);
         
         if (mysqli_stmt_execute($stmt)) {
             echo "New user created successfully";

@@ -1,5 +1,3 @@
-<?php require_once("./db/Testemonials_CRUD/showTestemonials.php") ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -428,34 +426,78 @@ require("lang/lang.php")
           </button>
         </div>
       </div>
-      
       <div class="-mx-6 lg:col-span-2 lg:mx-0 self-center justify-start overflow-hidden mt-4 shadow-md" id="client">
         <div id="clients_slider" class="w-[410px] flex gap-4 px-2 duration-200">
-          <!-- start foeach -->
-          <?php foreach($testemonials as $id=> $testemonial): ?>
           <div class="client">
             <div
               class="flex h-fit flex-col justify-between bg-white dark:bg-gray-800 p-6  rounded-2xl mt-3 shadow-sm w-96  sm:p-8 lg:p-12">
               <div>
                 <div class="flex items-center ">
-                  <img src="../images/uploads/<?php echo $testemonial['img_path'] ?>" alt="<?php $testemonial['img_path'] ?>" class="mb-4 rounded-full w-11 h-11">
+                  <img src="../images/client1.jpg" alt="Aymane Benhima" class="mb-4 rounded-full w-11 h-11">
                   <div class="flex flex-col mb-4 ml-8">
-                    <h3 class="dark:text-white"><?php echo $testemonial['first_name']." ".$testemonial['last_name'] ?></h3>
-                    <!-- <p class="text-gray-800 dark:text-gray-400 pt-2 lg:pt-2">Front-End Developer</p> -->
+                    <h3 class="dark:text-white">Aymane Benhima</h3>
+                    <p class="text-gray-800 dark:text-gray-400 pt-2 lg:pt-2">Front-End Developer</p>
                   </div>
                 </div>
                 <p class="mt-4 leading-relaxed text-gray-700 dark:text-gray-400">
-                  <?= __($testemonial['comment']) ?>
+                  <?= __("Loving this freelancing platform! As a front-end developer, the seamless interface and diverse opportunities make it my go-to. Quick payments and user-friendly experience keep me coming back. Kudos to the team for an awesome space for freelancers!") ?>
                 </p>
               </div>
             </div>
           </div>
-          <?php endforeach; ?>
+          <div class="client">
+            <div
+              class="flex h-fit flex-col justify-between bg-white dark:bg-gray-800 p-6  rounded-2xl mt-3 shadow-sm w-96  sm:p-8 lg:p-12">
+              <div>
+                <div class="flex items-center ">
+                  <img src="../images/client2.jpg" alt="Aymane Benhima" class="mb-4 rounded-full w-11 h-11">
+                  <div class="flex flex-col mb-4 ml-8">
+                    <h3 class="dark:text-white">Mohammed-elarbi El Hattab</h3>
+                    <p class="text-gray-800 dark:text-gray-400 pt-2 lg:pt-2">Data scientist</p>
+                  </div>
+                </div>
+                <p class="mt-4 leading-relaxed text-gray-700 dark:text-gray-400">
+                  <?= __("The diversity of data projects is outstanding, allowing me to apply my skills across various domains. Transparent communication and a reliable payment system make working here a pleasure. I'm truly glad to be one of your loyal customers") ?>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="client">
+            <div
+              class="flex h-fit flex-col justify-between bg-white dark:bg-gray-800 p-6  rounded-2xl mt-3 shadow-sm w-96  sm:p-8 lg:p-12">
+              <div>
+                <div class="flex items-center ">
+                  <img src="../images/client3.jpg" alt="Aymane Benhima" class="mb-4 rounded-full w-11 h-11">
+                  <div class="flex flex-col mb-4 ml-8">
+                    <h3 class="dark:text-white">Mohamed Tergui</h3>
+                    <p class="text-gray-800 dark:text-gray-400 pt-2 lg:pt-2">Graphic Designer</p>
+                  </div>
+                </div>
+                <p class="mt-4 leading-relaxed text-gray-700 dark:text-gray-400">
+                  <?= __("As a graphic designer, finding the right platform is crucial. P-P-T nails the essentials with a sleek, user-friendly interface that makes showcasing my portfolio and connecting with clients a breeze. It truly gets the needs of freelancers in the creative field.") ?>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="client">
+            <div
+              class="flex h-fit flex-col justify-between bg-white dark:bg-gray-800 p-6  rounded-2xl mt-3 shadow-sm w-96  sm:p-8 lg:p-12">
+              <div>
+                <div class="flex items-center ">
+                  <img src="../images/client4.jpg" alt="Aymane Benhima" class="mb-4 rounded-full w-11 h-11">
+                  <div class="flex flex-col mb-4 ml-8">
+                    <h3 class="dark:text-white">Bilal Chbanat</h3>
+                    <p class="text-gray-800 dark:text-gray-400 pt-2 lg:pt-2">Video editor</p>
+                  </div>
+                </div>
+                <p class="mt-4 leading-relaxed text-gray-700 dark:text-gray-400">
+                  <?= __("Freelancing bliss! As a video editor, this platform is a game-changer. The intuitive interface makes showcasing my portfolio and connecting with clients seamless. Hats off to the team for understanding and supporting freelancers' unique needs") ?>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      
-      <!-- end foeach -->
-
       <div class="mt-8 flex justify-center gap-4 lg:hidden">
         <button aria-label="previous slide" id="mobile-previous"
           class="rounded-full border border-black p-3 text-black transition dark:border-white dark:text-white hover:bg-[#00373E] hover:text-white">
