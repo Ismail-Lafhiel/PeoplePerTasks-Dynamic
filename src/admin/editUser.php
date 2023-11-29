@@ -22,7 +22,7 @@ include("adminHead.php");
             <form action="../db/User_CRUD/updateUser.php" class="p-4 md:p-5" method="POST"
                 enctype="multipart/form-data">
                 <div class="grid gap-4 mb-4 grid-cols-2">
-                    <input type="hidden" name="user_id" id="user-id" value=<?php echo $userData['user_id'] ?>>
+                    <input type="hidden" name="user_id" id="user-id" value=<?php echo $userData['id'] ?>>
                     <div class=" col-span-2">
                         <label for="first-name"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First

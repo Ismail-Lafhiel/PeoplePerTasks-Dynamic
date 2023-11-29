@@ -8,13 +8,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
     $bio = $_POST["bio"];
 
-    $imgNewName = null; // Initialize $imgNewName
+    $imgNewName = null;
 
     if (isset($_FILES["user_avatar"]) && $_FILES["user_avatar"]["error"] === 0) {
         $imgName = $_FILES["user_avatar"]["name"];
         $imgTmpName = $_FILES["user_avatar"]["tmp_name"];
         $imgSize = $_FILES["user_avatar"]["size"];
-
         $imgExt = pathinfo($imgName, PATHINFO_EXTENSION);
         $imgActualExt = strtolower($imgExt);
         $allowed = array("jpg", "jpeg", "png");
